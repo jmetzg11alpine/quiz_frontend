@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Header from './components/Header'
+import Nav from './components/Nav'
+import Quiz from './components/Quiz'
+import Q1 from './components/Q1'
+import Q2 from './components/Q2'
+import Q3 from './components/Q3'
+import Q4 from './components/Q4'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Router>
+        <Header />
+        <Nav />
+        <Routes>
+          <Route path='/quiz' element={<Quiz />}></Route>
+          <Route path='/q1' element={<Q1 />}></Route>
+          <Route path='/q2' element={<Q2 />}></Route>
+          <Route path='/q3' element={<Q3 />}></Route>
+          <Route path='/q4' element={<Q4 />}></Route>
+        </Routes>
+      </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
