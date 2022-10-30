@@ -14,7 +14,7 @@ function App() {
         <Header />
         <Nav />
         <Routes>
-          <Route path='/quiz' element={<Quiz />}></Route>
+          <Route path='/' element={<Quiz />}></Route>
           <Route path='/q1' element={<Q1 />}></Route>
           <Route path='/q2' element={<Q2 />}></Route>
           <Route path='/q3' element={<Q3 />}></Route>

@@ -1,4 +1,8 @@
 const Q3 = () => {
-  return <div>Q3</div>
+  return (
+    <div>
+      <h1>Quiz Three</h1>
+    </div>
+  )
 }
 export default Q3
