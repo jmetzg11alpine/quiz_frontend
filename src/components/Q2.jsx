@@ -1,7 +1,30 @@
+import { useState, useEffect } from 'react'
+import Quiz from './Quiz'
+import Graph from './Graph'
+import getData from './functions/getData.js'
+import questions from './data/q2_data'
+
+const url = 'http://127.0.0.1:8000/q2'
+
 const Q2 = () => {
+  const [scores, setScores] = useState([])
+  const [quizSubmitted, setQuizSubmitted] = useState(0)
+
+  useEffect(() => {
+    getData(url, setScores)
+  }, [quizSubmitted])
+
   return (
     <div>
-      <h1>Quize Two</h1>
+      <div className='info-container'>
+        <h1>Quiz 2 - STEM</h1>
+        <Quiz
+          questions={questions}
+          url={url}
+          setQuizSubmitted={setQuizSubmitted}
+        />
+      </div>
+      <Graph graph_name='graph_2' data={scores} />
     </div>
   )
 }

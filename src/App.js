@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Nav from './components/Nav'
-import Quiz from './components/Quiz'
+import Quiz from './components/QuizHome'
 import Q1 from './components/Q1'
 import Q2 from './components/Q2'
 import Q3 from './components/Q3'
 import Q4 from './components/Q4'
+import './styles.css'
 
 function App() {
   return (
