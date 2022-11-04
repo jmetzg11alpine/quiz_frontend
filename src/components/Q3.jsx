@@ -4,7 +4,7 @@ import Graph from './Graph'
 import getData from './functions/getData.js'
 import questions from './data/q3_data'
 
-const url = 'http://127.0.0.1:8000/q3'
+const url = 'https://evtssx.deta.dev/q3'
 
 const Q3 = () => {
   const [scores, setScores] = useState([])

@@ -49,46 +49,52 @@ const Quiz = ({ questions, url, setQuizSubmitted }) => {
 
   const handleShowAnswers = () => {
     const answers = getAnswers(questions)
-    // console.log(answers)
     alert(answers)
   }
   return (
     <div classNmae='quiz-container'>
       {intro ? (
         <div>
-          <div>start</div>
-          <button onClick={handleStart}>Start</button>
+          <div className='quiz-start'>
+            <button onClick={handleStart}>Start</button>
+          </div>
         </div>
       ) : endQuiz ? (
-        <div>
-          <p>Here is your scores {score}</p>
-          <form>
-            <label>
-              Name:
-              <input
-                type='text'
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
-              />
-            </label>
-            <label>
-              Password:
-              <input
-                type='text'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </label>
-          </form>
-          <p>Would you like to submit your answers?</p>
-          <button onClick={() => handleSubmit(score, userName)}>
-            Submit Scores
-          </button>
-          <button onClick={handleNoSubmit}>No Thanks</button>
+        <div className='end-quiz'>
+          <div className='quiz-extra-text'>
+            <p>
+              You got {score} correct. Would you like to submit your answers?
+            </p>
+            <form>
+              <label className='label-one'>
+                Name:
+                <input
+                  type='text'
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
+                />
+              </label>
+              <label>
+                Password:
+                <input
+                  type='text'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </label>
+            </form>
+          </div>
+
+          <div className='button'>
+            <button onClick={() => handleSubmit(score, userName)}>
+              Submit Scores
+            </button>
+            <button onClick={handleNoSubmit}>No Thanks</button>
+            <button onClick={handleShowAnswers}>See Answers</button>
+          </div>
         </div>
       ) : endResultsSection ? (
         <div>
-          {/* <h1>The real condition {endResultNumber}</h1> */}
           {endResultNumber === 1 ? (
             <div>
               <h2>Thanks for playing</h2>
@@ -105,12 +111,14 @@ const Quiz = ({ questions, url, setQuizSubmitted }) => {
               <p>He will give you a password</p>
             </div>
           )}
-          <button onClick={handleNoSubmit}>Close</button>
-          <button onClick={handleShowAnswers}>See Answers</button>
+          <div className='button'>
+            <button onClick={handleNoSubmit}>Close</button>
+            <button onClick={handleShowAnswers}>See Answers</button>
+          </div>
         </div>
       ) : (
         <div className='question-section'>
-          <div className='question-count'>
+          <div className='quiz-extra-text'>
             <span>
               Question {currentQuestion + 1}/{questions.length}
             </span>

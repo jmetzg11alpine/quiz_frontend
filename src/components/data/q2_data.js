@@ -1,11 +1,12 @@
 export const questions = [
   {
-    questionsText: 'first question',
+    questionsText:
+      'What numbers represent the empirical rule for a normal distribution',
     answerOptions: [
-      { answerText: 'a', isCorrect: true },
-      { answerText: 'b', isCorrect: false },
-      { answerText: 'c', isCorrect: false },
-      { answerText: 'd', isCorrect: false },
+      { answerText: '60-80-100', isCorrect: true },
+      { answerText: '50-90-95', isCorrect: false },
+      { answerText: '68-95-99', isCorrect: false },
+      { answerText: '72-85-95', isCorrect: false },
     ],
   },
   {

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const userURL = 'http://127.0.0.1:8000/users'
+const userURL = 'https://evtssx.deta.dev/users'
 
 // 1 = score update, 2 = score already exists, 3 = user not authorized
 async function pushScore(score, userName, password, url) {
@@ -30,6 +30,7 @@ async function verifyPassword(userName, password, userURL) {
 
 async function postScore(score, userName, url) {
   const result = await axios.post(url, { name: userName, score: score })
+  console.log(result.data)
   return result.data
 }
 
